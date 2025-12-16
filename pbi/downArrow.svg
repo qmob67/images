@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="260" viewBox="0 0 200 260">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-color="#F4355E" flood-opacity="0.9" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g filter="url(#glow)" fill="#F4355E">
+
+    <!-- Rounded triangle head pointing downward -->
+    <path d="
+      M 40 150
+      Q 25 150 30 160
+      L 100 240
+      L 170 160
+      Q 175 150 160 150
+      Z" />
+
+    <!-- Shaft (rounded rect) overlapped by triangle on top -->
+    <rect x="60" y="60" width="80" height="100" rx="12" ry="12" />
+  </g>
+</svg>
